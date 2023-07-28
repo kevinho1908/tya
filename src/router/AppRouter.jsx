@@ -8,9 +8,7 @@ export const AppRouter = () => {
         <>
             <Routes>         
                 <Route path='login' element={<LoginPage/>}/>     
-                <Route path='/*' element={<SafeRoutes/>}/>    
-
-                
+                <Route path='/*' element={<SafeRoutes/>}/>                  
             </Routes>
         </>
     )

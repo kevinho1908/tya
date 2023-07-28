@@ -17,31 +17,26 @@ export const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
-
             <Link
                 className="navbar-brand"
                 to="/PrincipalPage"
             >
                 Tierra y Armonia
             </Link>
-
-            <div className="navbar-collapse">
+            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <div className="navbar-nav">
-
                     <NavLink
                         className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''} `}
                         to="/PrincipalPage"
                     >
                         Inicio
                     </NavLink>
-
                     <NavLink
                         className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''} `}
                         to="/tablero"
                     >
-                        Tablero
+                        Mi aprendizaje
                     </NavLink>
-
                 </div>
             </div>
 

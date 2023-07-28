@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './login.css';
+import '../../ui/components/App.css';
 import { useForm } from '../../hook/useForm'
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -22,7 +22,7 @@ export const Login = () => {
         
         axios.post(baseURL, {
             username: user+'@tierrayarmonia.local',
-            password: pass
+            password: pass,
         })
         .then((response) => {
             const {data }= response;

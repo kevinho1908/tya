@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './App.css'
+import '../../ui/components/App.css';
 import { CursoCard } from '../components/CursoCard'
 
 
@@ -19,8 +19,8 @@ export const PrincipalPage = () => {
          </div>
         </main>
 
-        <div className="flex-footer">5
-          footer
+        <div className="flex-footer">
+          Tierra y Armonia
         </div>
     </>
   )

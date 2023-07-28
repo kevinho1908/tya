@@ -1,18 +1,21 @@
 import React from 'react'
-import { PrincipalPage, TableroPage } from '../pages'
+import { CursoPage, PerfilPage, PrincipalPage, TableroPage } from '../pages'
 import { Route, Routes } from 'react-router-dom'
-import { Navbar } from '../../ui'
+import { Nav, Navbar } from '../../ui'
+
 
 
 export const SafeRoutes = () => {
   return (
     <>
-    <Navbar />
+    <Nav />
     <div className="container">
         <Routes>
             <Route path='PrincipalPage' element={<PrincipalPage />} />    
             <Route path='/' element={<PrincipalPage />} />    
             <Route path='tablero' element={ <TableroPage /> }/>
+            <Route path='Perfil' element={ <PerfilPage /> }/>
+            <Route path='CursoPage' element={ <CursoPage/> } />
         </Routes>
     </div>
 </>
