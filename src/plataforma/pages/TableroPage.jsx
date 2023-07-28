@@ -9,6 +9,7 @@ const TableroPageName = styled.h1`
 export const TableroPage = () => {
   return (
     <>
+    
         <TableroPageName>¡Bienvenido de vuelta, TyA!</TableroPageName>
         <hr />
         <Slider />
