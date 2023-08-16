@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faHouse, faPuzzlePiece, faSquarePollVertical, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faHouse, faPuzzlePiece, faRightFromBracket, faSquarePollVertical, faStar } from '@fortawesome/free-solid-svg-icons'
 
 
 //<FontAwesomeIcon icon={faPuzzlePiece} size="xl" style={{color: "#a3a3a3",}} />
@@ -13,17 +13,17 @@ export const Nav = () => {
     const navigate = useNavigate();
 
     const onLogout = () => {
-        navigate('/login', {
+        navigate('/logout', {
             replace: true
         })
     }
 
     return (
         <>
-            <nav>
+            <nav className='animate__animated animate__backInLeft'>
                 <div className='logo'>
                     <Link className='imagen'
-                        to={'/tablero'}>
+                        to={'/principalPage'}>
                         <img src={`/assets/tierra-y-armonia-logo-blanco-33e867d8.svg`} alt="" />
                     </Link>
                     <div className="search">
@@ -33,32 +33,37 @@ export const Nav = () => {
                     <div className='options'>
                         <Link
                             className='options-icon-svg '
-                            to={'/PrincipalPage'}>
-                            <FontAwesomeIcon icon={faHouse} size="xl" style={{ color: "#a3a3a3", }} />
+                            to={'/principalPage'}>
+                            <FontAwesomeIcon icon={faHouse} size="xl" style={{ color: "#fff", }} />
                         </Link>
                         <Link
                             className='options-icon-svg'
-                            to={'/Reportes'}>
-                            <FontAwesomeIcon icon={faStar} size="xl" style={{ color: "#a3a3a3", }} />
+                            to={'/reportesPage'}>
+                            <FontAwesomeIcon icon={faStar} size="xl" style={{ color: "#fff", }} />
                         </Link>
 
                         <Link
                             className='options-icon-svg '
-                            to={'/CursoPage'}>
-                            <FontAwesomeIcon icon={faPuzzlePiece} size="xl" style={{ color: "#a3a3a3", }} />
+                            to={'/cursoPage'}>
+                            <FontAwesomeIcon icon={faPuzzlePiece} size="xl" style={{ color: "#fff", }}/>
                         </Link>
 
                     </div>
                     <div className='options-two'>
                         <div className="profile">
+                            <Link
+                            className='profile'
+                            to={'/perfilPage'}>
                             <img src="" alt="" />
                             <p> Kevin Gonzalez</p>
+                            </Link>
                         </div>
 
-                        <button className='nav-item nav-link btn'
+                        <button className='nav-item nav-link btn '
                             onClick={onLogout}>
-                            logout
+                            <FontAwesomeIcon icon={faRightFromBracket} style={{color: "#ffffff",}} />
                         </button>
+                        
                     </div>
                 </div>
             </nav>

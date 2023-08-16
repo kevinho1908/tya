@@ -1,3 +1,4 @@
 export * from './Navbar';
-export * from  './Siderbar';
+export * from  './admin/Siderbar';
 export * from './Nav';
+export * from  './admin/MainContent';

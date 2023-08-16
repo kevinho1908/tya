@@ -1,7 +1,10 @@
 import React from 'react'
+import '../../ui/components/App.css'
 
 export const CursoPage = () => {
   return (
-    <div>CursoPage</div>
+    <>
+      <div className='p-top-57'>CursoPage</div>
+    </>
   )
 }

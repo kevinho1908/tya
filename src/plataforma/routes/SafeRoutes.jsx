@@ -1,5 +1,6 @@
 import React from 'react'
-import { CursoPage, PerfilPage, PrincipalPage, TableroPage } from '../pages'
+import { CursoPage, PerfilPage, PrincipalPage, ReportesPage, TableroPage } from '../pages'
+import { HomePage } from '../pages/admin'
 import { Route, Routes } from 'react-router-dom'
 import { Nav, Navbar } from '../../ui'
 
@@ -8,16 +9,18 @@ import { Nav, Navbar } from '../../ui'
 export const SafeRoutes = () => {
   return (
     <>
-    <Nav />
-    <div className="container">
+      <div>
+        <Nav />
         <Routes>
-            <Route path='PrincipalPage' element={<PrincipalPage />} />    
-            <Route path='/' element={<PrincipalPage />} />    
-            <Route path='tablero' element={ <TableroPage /> }/>
-            <Route path='Perfil' element={ <PerfilPage /> }/>
-            <Route path='CursoPage' element={ <CursoPage/> } />
+          <Route path='principalPage' element={<PrincipalPage />} />
+          <Route path='/' element={<PrincipalPage />} />
+          <Route path='tableroPage' element={<TableroPage />} />
+          <Route path='perfilPage' element={<PerfilPage />} />
+          <Route path='cursoPage' element={<CursoPage />} />
+          <Route path='reportesPage' element={<ReportesPage />} />
+
         </Routes>
-    </div>
-</>
+      </div>
+    </>
   )
 }

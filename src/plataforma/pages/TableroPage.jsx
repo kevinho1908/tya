@@ -4,21 +4,22 @@ import { styled } from 'styled-components'
 
 const TableroPageName = styled.h1`
     text-align: center;
+    padding-top: 57px;
 `;
 
 export const TableroPage = () => {
   return (
     <>
     
-        <TableroPageName>¡Bienvenido de vuelta, TyA!</TableroPageName>
+        <TableroPageName>¡¡Bienvenido de vuelta, TyA! 👋</TableroPageName>
         <hr />
-
         <div className='contedor-tablero-1'>
             <h4> Plataforma de aprendizaje sobre Seguridad Informática</h4>
               <p>Aprende a detectar y protegerte de las principales amenazas de Seguridad Informática.</p>
         </div>
         <hr />
-        <h5> Temas principales </h5>
+        <b><h5> Temas principales </h5></b>
+        <hr />
         
 
         
