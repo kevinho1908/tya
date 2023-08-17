@@ -1,6 +1,7 @@
 import React from 'react'
 import {  Slider } from '../components'
 import { styled } from 'styled-components'
+import { Nav } from '../../ui';
 
 const TableroPageName = styled.h1`
     text-align: center;
@@ -10,7 +11,7 @@ const TableroPageName = styled.h1`
 export const TableroPage = () => {
   return (
     <>
-    
+        <Nav></Nav>
         <TableroPageName>¡¡Bienvenido de vuelta, TyA! 👋</TableroPageName>
         <hr />
         <div className='contedor-tablero-1'>

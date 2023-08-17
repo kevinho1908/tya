@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faHouse, faPuzzlePiece, faRightFromBracket, faSquarePollVertical, faStar } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,7 +8,8 @@ import { faEnvelope, faHouse, faPuzzlePiece, faRightFromBracket, faSquarePollVer
 //<FontAwesomeIcon icon={faPuzzlePiece} size="xl" style={{color: "#a3a3a3",}} />
 
 export const Nav = () => {
-
+    const { username } = useParams(); 
+    console.log(username)
 
     const navigate = useNavigate();
 
@@ -55,7 +56,7 @@ export const Nav = () => {
                             className='profile'
                             to={'/perfilPage'}>
                             <img src="" alt="" />
-                            <p> Kevin Gonzalez</p>
+                            <p>{username}</p>
                             </Link>
                         </div>
 

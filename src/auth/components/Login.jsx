@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../../ui/components/App.css';
-import { useForm } from '../../hook/useForm'
 import axios from 'axios';
 
 const baseURL = "http://localhost:8000/login"
@@ -16,7 +15,7 @@ export const Login = () => {
         username:'',
     });
     const [password , setPassword] = useState({
-        username:'',
+        password:'',
     });
 
     const onLogin = (event) => {
@@ -30,18 +29,18 @@ export const Login = () => {
             const { data }= response;
             const { ok } = data;
             const { grupo } = data
+            const { VAD } = data;
             if(ok === true){
                 setPost(response.data); 
-             
+                console.log( VAD );
                 console.log(ok) 
                 console.log( 'valor de grupo = '+ grupo )                                                                               
-                return (grupo === true) ?  navigate('/homePage' ,{
+                return (grupo === true) ?  navigate(`/homePage/${username}` ,{
                     replace: true,                
                     value: grupo,
                     
-                }) :navigate('/principalPage' ,{
-                    replace: true,
-                  
+                }) :navigate(`/principalPage/${username}` ,{
+                    replace: true,                  
                 })     
             }else{
                 console.log(ok) 
@@ -65,8 +64,7 @@ console.log(JSON.stringify({username, password}))
                     />
                     <input
                         type="password"
-                        placeholder="Contraseña"    
-                                           
+                        placeholder="password"                                               
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <button

@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 
 
 
 export const Siderbar = () => {
+    const { username } = useParams(); 
+    console.log(username)
     return (
         <>
             <div className='sidebar'>

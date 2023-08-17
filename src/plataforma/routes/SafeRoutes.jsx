@@ -7,18 +7,18 @@ import { Nav, Navbar } from '../../ui'
 
 
 export const SafeRoutes = () => {
+
   return (
     <>
       <div>
-        <Nav />
         <Routes>
-          <Route path='principalPage' element={<PrincipalPage />} />
+          <Route path='PrincipalPage/:username' element={<PrincipalPage />} />
           <Route path='/' element={<PrincipalPage />} />
           <Route path='tableroPage' element={<TableroPage />} />
           <Route path='perfilPage' element={<PerfilPage />} />
           <Route path='cursoPage' element={<CursoPage />} />
           <Route path='reportesPage' element={<ReportesPage />} />
-
+          <Route path='homePage/:username' element={<HomePage />} />
         </Routes>
       </div>
     </>
