@@ -54,7 +54,7 @@ export const Nav = () => {
                         <div className="profile">
                             <Link
                             className='profile'
-                            to={'/perfilPage'}>
+                            to={`/perfilPage/${username}`}>
                             <img src="" alt="" />
                             <p>{username}</p>
                             </Link>

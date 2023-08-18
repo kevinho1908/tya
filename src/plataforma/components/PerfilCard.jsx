@@ -3,15 +3,18 @@ import { Avatar, Box, Card, Stack, Typography, Chip, Switch, Divider, IconButton
 import { grey } from '@mui/material/colors'
 import React from 'react'
 import '../../ui/components/App.css'
+import { useParams } from 'react-router-dom'
 
 export const PerfilCard = () => {
+    const { username } = useParams();
+    console.log(username)
     return (
         <div className='p-top-57'>
             <Card>
                 <Box sx={{ p: 2, display: 'flex' }}>
                     <Avatar variant="rounded" src="" />
                     <Stack spacing={0.5}>
-                        <Typography fontWeight={700}>Michael Scott</Typography>
+                        <Typography fontWeight={700}>{username}</Typography>
                         <Typography variant="body2" color="text.secondary">
                             <LocationOn sx={{ color: grey[500] }} /> Scranton, PA
                         </Typography>
