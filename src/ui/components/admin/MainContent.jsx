@@ -2,10 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const MainContent = () => {
+    const menuBar = document.querySelector('.content .navbar-content .bx.bx-menu')
+    const sideBar = document.querySelector('.sidebar')
+
+    const handleFunction = () => {
+        console.log("works!!!")
+       sideBar.classList.toggle('close')
+       }
+ 
     return (
         <div className='content'>
             <div className='navbar-content'>
-                <i className='bx bx-menu'></i>
+                <i className='bx bx-menu' onClick={handleFunction}></i>
                 <form action="">
                     <div className="form-input">
                         <input type="search" placeholder='Search...' />
@@ -14,9 +22,8 @@ export const MainContent = () => {
                         </button>
                     </div>
                 </form>
-                <input type="checkbox" id="theme-toggle" hidden />
-                <label htmlFor="theme-toggle"
-                    className='theme-toggle'></label>
+                <input type="checkbox" id="theme-toggle" />
+                <label htmlFor="" className='theme-toggle'></label>
                 <Link to={''} className='notif'>
                     <i className='bx bx-bell' ></i>
                     <span className="count">12</span>
