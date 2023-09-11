@@ -9,6 +9,10 @@ const TableroPageName = styled.h1`
 `;
 
 export const TableroPage = () => {
+  const { user } = useAuthStore();
+  useEffect(() => {
+    user.isAdmin
+  },)
   return (
     <>
         <Nav></Nav>

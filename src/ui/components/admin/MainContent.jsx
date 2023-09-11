@@ -1,14 +1,17 @@
+
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuthStore } from '../../../hook'
 
 export const MainContent = () => {
     const menuBar = document.querySelector('.content .navbar-content .bx.bx-menu')
     const sideBar = document.querySelector('.sidebar')
+    // const { startLogout, user} = useAuthStore();
 
     const handleFunction = () => {
         console.log("works!!!")
        sideBar.classList.toggle('close')
-       }
+    }
  
     return (
         <div className='content'>
@@ -29,6 +32,7 @@ export const MainContent = () => {
                     <span className="count">12</span>
                 </Link>
                 <Link to={''} className='perfil'>
+                
                     <img src={`/assets/TyALogo.png`} alt="" />
                 </Link>
             </div>

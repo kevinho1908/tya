@@ -4,8 +4,10 @@ import { Nav } from '../../ui'
 import { useParams } from 'react-router-dom';
 
 export const PerfilPage = () => {
-    const { username } = useParams();
-    console.log(username)
+    const { user } = useAuthStore();
+    useEffect(() => {
+      user.isAdmin
+    },)
     return (
         <>
             <Nav />

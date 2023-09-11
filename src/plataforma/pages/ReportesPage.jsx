@@ -3,6 +3,10 @@ import '../../ui/components/App.css'
 import { Nav } from '../../ui'
 
 export const ReportesPage = () => {
+  const { user } = useAuthStore();
+  useEffect(() => {
+    user.isAdmin
+  },)
   return (
     <>
       <Nav />

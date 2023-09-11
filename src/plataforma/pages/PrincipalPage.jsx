@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../../ui/components/App.css';
 import { CursoCard } from '../components/CursoCard'
 import { styled } from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { Nav } from '../../ui';
+import { useAuthStore } from '../../hook';
 
 const TableroPageName = styled.h1`
     text-align: center;
@@ -11,8 +12,11 @@ const TableroPageName = styled.h1`
 `;
 
 export const PrincipalPage = () => {
-  const { username } = useParams();
-  console.log(username)
+  const { user } = useAuthStore();
+  useEffect(() => {
+    user.isAdmin
+  },)
+
   return (
     <>
       <Nav />

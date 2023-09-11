@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
+import { useAuthStore } from '../../../hook';
 
 
 
 export const Siderbar = () => {
-
+    const { startLogout, user} = useAuthStore();
     const sideLinks = document.querySelectorAll('.sidebar .side-menu li a:not(.logout)');
 
     sideLinks.forEach(item => {
@@ -20,8 +21,7 @@ export const Siderbar = () => {
         console.log("works!!!")
 
     }
-    const { username } = useParams();
-    console.log(username)
+
     return (
         <>
             <div className='sidebar'>
@@ -39,7 +39,7 @@ export const Siderbar = () => {
                 </ul>
                 <ul className='side-menu'>
                     <li>
-                        <Link to={'/logout'} className='logout td-none'><i className='bx bx-log-out-circle' ></i> Logout</Link>
+                        <Link className='logout td-none' onClick={startLogout}><i className='bx bx-log-out-circle' ></i> Logout</Link>
                     </li>
                 </ul>
 
