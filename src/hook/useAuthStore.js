@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import SafePageApi from "../api/SafePageApi"
 import { clearErrorMessage, onChecking, onLogin, onLogout } from "../store"
 import { detenerConteo, iniciarConteo } from "../helpers";
+import Swal from "sweetalert2";
 
 
 export const useAuthStore = () => {
@@ -10,19 +11,17 @@ export const useAuthStore = () => {
     const dispatch = useDispatch();
 
     const startLogin = async({ username, password }) => {
-        dispatch ( onChecking() )
-        iniciarConteo()
+        dispatch( onChecking() );
         try {
             const {data} = await SafePageApi.post('/auth', { username , password });
             localStorage.setItem('token', data.token)
             localStorage.setItem('token-init-date', new Date().getTime() );
-            sessionStorage.setItem('token', data.token)
-            dispatch( onLogin({username: data.VAD.username , name : data.VAD.name, isAdmin: data.grupo }))
+            dispatch( onLogin({username: data.username , name : data.name, isAdmin: data.grupo }))
         } catch (error) {
             dispatch( onLogout('Credenciales incorrectas') );
-            setTimeout(() =>{
-                dispatch( clearErrorMessage() )
-            }, 3000);
+            setTimeout(() => {
+                dispatch( clearErrorMessage() );
+            }, 10);
         }
     }
 
@@ -34,7 +33,7 @@ export const useAuthStore = () => {
             const { data } = await SafePageApi.get('auth/renew');
             localStorage.setItem('token', data.token );
             localStorage.setItem('token-init-date', new Date().getTime() );
-            dispatch( onLogin({ name: data.name, uid: data.uid }) );
+            dispatch( onLogin({ username: data.username , name : data.name, isAdmin: data.isMember }) );
         } catch (error) {
             localStorage.clear();
             dispatch( onLogout() );

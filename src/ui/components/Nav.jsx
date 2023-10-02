@@ -12,11 +12,6 @@ export const Nav = () => {
 
     const { startLogout, user} = useAuthStore();
 
-    useEffect(() => {
-        user.isAdmin
-    }, )
-    
-
     return (
         <>
             <nav >

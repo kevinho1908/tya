@@ -16,20 +16,23 @@ export const Login = () => {
     const { startLogin, errorMessage } = useAuthStore();
     const { loginUsername, loginPassword, onInputChange:onLoginInputChange } = useForm( loginFormFields )
 
-
     const loginSubmit = ( event ) => {
         event.preventDefault();
-        startLogin( { username: loginUsername, password: loginPassword });
+        if( loginUsername === '' || loginPassword === ''){
+            Swal.fire('Error en la autenticación', errorMessage, 'error');
+        }else{
+            startLogin( { username: loginUsername, password: loginPassword });
+        }
     }
 
     useEffect(() => {
-      if( errorMessage !== undefined){
-        Swal.fire('error en la autenticacion ', errorMessage, 'error')
-      }
-
-    }, [ errorMessage ])
-    
-
+        if ( errorMessage !== undefined ) {
+          Swal.fire('Error en la autenticación', errorMessage, 'error');
+        }    
+      }, [errorMessage])
+      
+  
+  
 //     const navigate = useNavigate();
 
 //     const [post, setPost] = useState(null);
@@ -94,11 +97,9 @@ export const Login = () => {
                         value={ loginPassword }  
                         onChange={ onLoginInputChange }                                                  
                         // onChange={(e) => setPassword(e.target.value)}
-                        autoComplete='on'
                     />
                     <button
-                        className='btn btn-primary'
-                       
+                        className='btn btn-primary'                       
                     >
                         Login                                    
                     </button>

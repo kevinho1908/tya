@@ -8,29 +8,9 @@ import { useAuthStore } from '../../hook'
 
 
 export const SafeRoutes = () => {
-  const { user } = useAuthStore();
-  useEffect(() => {
-    user.isAdmin
-  },)
-  
-  console.log(user.isAdmin)
+ 
   return (
-
-
-    <Routes>{
-
-
-      (user.isAdmin) ?
-        (
-          <>
-            <Route path="*" element={<HomePage />} />
-            <Route path="/*" element={<Navigate to="/" />} />
-            <Route path='homePage' element={<HomePage />} />
-
-          </>
-        )
-        :
-        (
+    <Routes>
           <>
             <Route path='principalPage' element={<PrincipalPage />} />
             <Route path='*' element={<PrincipalPage />} />
@@ -38,11 +18,7 @@ export const SafeRoutes = () => {
             <Route path='perfilPage' element={<PerfilPage />} />
             <Route path='cursoPage' element={<CursoPage />} />
             <Route path='reportesPage' element={<ReportesPage />} />
-
           </>
-        )
-    }
-
     </Routes>
 
 
