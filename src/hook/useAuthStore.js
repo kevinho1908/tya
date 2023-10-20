@@ -13,7 +13,7 @@ export const useAuthStore = () => {
     const startLogin = async({ username, password }) => {
         dispatch( onChecking() );
         try {
-            const {data} = await SafePageApi.post('/auth', { username , password });
+            const {data} = await SafePageApi.post('/auth',  { username , password });
             localStorage.setItem('token', data.token)
             localStorage.setItem('token-init-date', new Date().getTime() );
             dispatch( onLogin({username: data.username , name : data.name, isAdmin: data.grupo }))
