@@ -37,6 +37,10 @@
 .p-left-30{
   padding-left: 30px !important ;
 }
+
+.m-left-16{
+  margin-left: 16px;
+}
 .row {
   --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;

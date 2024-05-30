@@ -50,7 +50,8 @@ export const AppRouter = () => {
               <Route path="mensajes" element={<MensajesCourse />} />
               <Route path="usuarios" element={<UsersCourse />} />
               <Route path="configuracion" element={<ConfiguracionCourse />} />
-              <Route path='curso/:id' element={<CursoEdit />} />
+              <Route path='curso/:course_id' element={<CursoEdit />} />
+              
             </>
           ) :  (
             <>
@@ -60,6 +61,7 @@ export const AppRouter = () => {
               <Route path="cursoPage" element={<CursoPage />} />
               <Route path="reportesPage" element={<ReportesPage />} />
               <Route path="/*" element={<PrincipalPage />} />
+              
             </>
           )}
       </Routes>

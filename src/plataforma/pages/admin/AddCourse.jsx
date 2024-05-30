@@ -81,7 +81,7 @@ export const AddCourse = () => {
         <>
             <MainContent />
             <Siderbar />
-            <div className="content row">
+            <div className="lef content row">
                 <div className="col-7">
                     <h4> Crea un curso </h4>
                     <hr />
@@ -120,6 +120,7 @@ export const AddCourse = () => {
                             {todos.map(post => (
                                     <CursoCard
                                         key={post.course_id}
+                                        valor={post.imagen}
                                         {...post}
                                     />
                             ))}
